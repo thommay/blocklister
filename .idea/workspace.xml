@@ -22,9 +22,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8307733-4579-4b6a-ac27-5991d6fa0df5" name="Default Changelist" comment="Blackholer!&#10;&#10;Implement a very trivial retriever to grab dns blocklists and turn them into a lua file suitable for use with PowerDNS recursor.&#10;See https://gist.github.com/ahupowerdns/bb1a043ce453a9f9eeed for more.">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +52,10 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="language.rust.rustfmt" />
   </component>
   <component name="RustProjectSettings">
+    <option name="runRustfmtOnSave" value="true" />
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
     <option name="version" value="2" />
   </component>
@@ -77,5 +79,9 @@
       <screen x="0" y="23" width="3440" height="1417" />
     </state>
     <state x="2259" y="557" key="#Notifications/0.23.3440.1417@0.23.3440.1417" timestamp="1591194182659" />
+    <state x="1877" y="325" key="SettingsEditor" timestamp="1591266561014">
+      <screen x="0" y="23" width="3440" height="1417" />
+    </state>
+    <state x="1877" y="325" key="SettingsEditor/0.23.3440.1417@0.23.3440.1417" timestamp="1591266561014" />
   </component>
 </project>
