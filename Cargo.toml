@@ -1,5 +1,5 @@
 [package]
-name = "blackholer"
+name = "blocklister"
 version = "0.1.0"
 authors = ["Thom May <thom@may.yt>"]
 edition = "2018"

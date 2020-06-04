@@ -1,7 +1,10 @@
-blacklists = [
+blocklists = [
     "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt",
     "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt",
     "https://v.firebog.net/hosts/static/w3kbl.txt",
     "https://v.firebog.net/hosts/AdguardDNS.txt",
     ]
-output = "blocklist.lua"
+permitted = [ "https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt" ]
+
+blocklist_output = "blocklist.lua"
+permitted_output = "permitted.lua"

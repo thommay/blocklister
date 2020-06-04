@@ -10,8 +10,14 @@ fn main() -> Result<()> {
     let mut cfg = String::new();
     cf.read_to_string(&mut cfg)?;
     let config: Config = toml::from_str(&cfg)?;
+    process(config.blocklists, config.blocklist_output)?;
+    process(config.permitted, config.permitted_output)?;
+    Ok(())
+}
+
+fn process(tgt: Vec<String>, path: PathBuf) -> Result<()> {
     let mut urls = vec![];
-    for url in config.blacklists {
+    for url in tgt {
         let body: String = if let Ok(req) = reqwest::blocking::get(&url) {
             req.text()?
         } else {
@@ -28,25 +34,32 @@ fn main() -> Result<()> {
             urls.push(line);
         }
     }
-    urls.sort();
-    urls.dedup();
-    let mut output = String::from("return{");
-    for entry in urls {
-        output += format!("\"{}\",", entry).as_ref();
-    }
-    let mut output = String::from(output.trim_end_matches(','));
-    output.push('}');
+
+    let output = luaify(&mut urls);
     let mut o = OpenOptions::new()
         .create(true)
         .truncate(true)
         .write(true)
-        .open(config.output)?;
+        .open(path)?;
     o.write(output.as_bytes())?;
     Ok(())
 }
 
+fn luaify(input: &mut Vec<String>) -> String {
+    input.sort();
+    input.dedup();
+    let mut output = String::from("return{");
+    for entry in input {
+        output += format!("\"{}\",", entry).as_ref();
+    }
+    let mut output = String::from(output.trim_end_matches(','));
+    output.push('}');
+    output
+}
 #[derive(Default, Debug, Clone, Deserialize)]
 struct Config {
-    blacklists: Vec<String>,
-    output: PathBuf,
+    blocklists: Vec<String>,
+    blocklist_output: PathBuf,
+    permitted: Vec<String>,
+    permitted_output: PathBuf,
 }
