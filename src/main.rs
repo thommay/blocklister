@@ -1,25 +1,27 @@
-use anyhow::Result;
 use serde::Deserialize;
 use std::fs::OpenOptions;
 use std::io::{Read, Write};
 use std::path::PathBuf;
 
-fn main() -> Result<()> {
+type Result<T> = std::result::Result<T, Box<dyn std::error::Error + Send + Sync>>;
+
+#[tokio::main]
+async fn main() -> Result<()> {
     let c = std::env::args().last().unwrap();
     let mut cf = OpenOptions::new().read(true).open(c)?;
     let mut cfg = String::new();
     cf.read_to_string(&mut cfg)?;
     let config: Config = toml::from_str(&cfg)?;
-    process(config.blocklists, config.blocklist_output)?;
-    process(config.permitted, config.permitted_output)?;
+    process(config.blocklists, config.blocklist_output).await?;
+    process(config.permitted, config.permitted_output).await?;
     Ok(())
 }
 
-fn process(tgt: Vec<String>, path: PathBuf) -> Result<()> {
+async fn process(tgt: Vec<String>, path: PathBuf) -> Result<()> {
     let mut urls = vec![];
     for url in tgt {
-        let body: String = if let Ok(req) = reqwest::blocking::get(&url) {
-            req.text()?
+        let body: String = if let Ok(req) = reqwest::get(&url).await {
+            req.text().await?
         } else {
             dbg!(format!("got busted URL: {}", url));
             continue;

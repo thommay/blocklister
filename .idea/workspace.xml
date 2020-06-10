@@ -22,12 +22,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8307733-4579-4b6a-ac27-5991d6fa0df5" name="Default Changelist" comment="Be a bit more robust&#10;&#10;Now we'll just move on in the face of bad requests, rather than blowing up.&#10;Also, rustfmt.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +56,28 @@
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="language.rust.rustfmt" />
   </component>
+  <component name="RunManager">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="" />
+          <option name="buildCliOptions" value="" />
+          <option name="buildOnly" value="true" />
+          <option name="command" value="" />
+          <option name="containerName" value="" />
+          <option name="entrypoint" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="RustProjectSettings">
     <option name="runRustfmtOnSave" value="true" />
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
@@ -73,6 +93,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Blackholer!&#10;&#10;Implement a very trivial retriever to grab dns blocklists and turn them into a lua file suitable for use with PowerDNS recursor.&#10;See https://gist.github.com/ahupowerdns/bb1a043ce453a9f9eeed for more." />
@@ -80,6 +101,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Be a bit more robust&#10;&#10;Now we'll just move on in the face of bad requests, rather than blowing up.&#10;Also, rustfmt." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2074" y="244" key="#Dockerfile" timestamp="1591785920777">
+      <screen x="0" y="23" width="3440" height="1417" />
+    </state>
+    <state x="2074" y="244" key="#Dockerfile/0.23.3440.1417@0.23.3440.1417" timestamp="1591785920777" />
     <state x="2259" y="557" key="#Notifications" timestamp="1591194182659">
       <screen x="0" y="23" width="3440" height="1417" />
     </state>
