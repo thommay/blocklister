@@ -32,6 +32,11 @@ async fn process(tgt: Vec<String>, path: PathBuf) -> Result<()> {
             }
             let line = line.split('#').collect::<Vec<&str>>();
             let line = line.first().unwrap().trim();
+
+            let line = if line.split_whitespace().count() == 2 {
+                // This looks like a "<IP> <Name>" pair; drop the IP
+                line.split_whitespace().nth(1).unwrap_or("")
+            } else {line};
             let line = String::from(line.trim_end_matches('\n'));
             urls.push(line);
         }
